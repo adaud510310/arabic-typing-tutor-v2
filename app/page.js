@@ -1,66 +1,67 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
 import styles from "./page.module.css";
+import { Keyboard, Zap, BarChart } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className={styles.main}>
+      <section className={styles.hero}>
+        <div className={styles.heroContent}>
+          <h1 className={styles.title}>
+            {t.home.heroTitle.split('\n').map((line, i) => (
+              <span key={i} className="block">{line}</span>
+            ))}
+          </h1>
+          <p className={styles.subtitle}>
+            {t.home.heroSubtitle}
+          </p>
+          <div className={styles.ctaGroup}>
+            <Link href="/lessons" className="btn btn-primary">
+              {t.home.startLearning}
+            </Link>
+            <Link href="/test" className="btn btn-secondary">
+              {t.home.testSpeed}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.features}>
+        <div className={styles.featureCard}>
+          <div className={styles.featureIcon}>
+            <Keyboard size={40} />
+          </div>
+          <h3 className={styles.featureTitle}>{t.home.feature1Title}</h3>
+          <p className={styles.featureDesc}>
+            {t.home.feature1Desc}
           </p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className={styles.featureCard}>
+          <div className={styles.featureIcon}>
+            <Zap size={40} />
+          </div>
+          <h3 className={styles.featureTitle}>{t.home.feature2Title}</h3>
+          <p className={styles.featureDesc}>
+            {t.home.feature2Desc}
+          </p>
         </div>
-      </main>
+
+        <div className={styles.featureCard}>
+          <div className={styles.featureIcon}>
+            <BarChart size={40} />
+          </div>
+          <h3 className={styles.featureTitle}>{t.home.feature3Title}</h3>
+          <p className={styles.featureDesc}>
+            {t.home.feature3Desc}
+          </p>
+        </div>
+      </section>
     </div>
   );
 }

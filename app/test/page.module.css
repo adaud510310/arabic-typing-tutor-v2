@@ -1,0 +1,91 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timeOption {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--secondary-foreground);
+}
+
+.timeOption:hover {
+    background: var(--secondary);
+}
+
+.timeOption.active {
+    background: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.testArea {
+    position: relative;
+}
+
+.timerWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.results {
+    text-align: center;
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+    animation: fadeIn 0.5s ease;
+}
+
+.statsGrid {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

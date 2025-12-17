@@ -1,0 +1,116 @@
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+    user-select: none;
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3rem;
+    height: 3rem;
+    background: var(--secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    color: var(--secondary-foreground);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.1s ease;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.key.active {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    transform: translateY(2px);
+    box-shadow: 0 0 10px var(--accent-glow);
+    border-color: var(--primary);
+}
+
+.key.space {
+    width: 15rem;
+    max-width: 40%;
+}
+
+.key.shift {
+    width: 6rem;
+}
+
+.key.enter {
+    width: 5rem;
+}
+
+.key.backspace {
+    width: 5rem;
+    font-size: 0.8rem;
+}
+
+.key.tab {
+    width: 4rem;
+}
+
+.key.caps {
+    width: 4.5rem;
+}
+
+@media (max-width: 768px) {
+    .keyboard {
+        padding: 0.5rem;
+        gap: 0.25rem;
+    }
+
+    .row {
+        gap: 0.25rem;
+    }
+
+    .key {
+        min-width: 2rem;
+        height: 2.5rem;
+        font-size: 0.8rem;
+        border-radius: 0.25rem;
+    }
+
+    .key.space {
+        width: auto;
+        flex-grow: 1;
+        min-width: 6rem;
+    }
+
+    .key.shift,
+    .key.enter,
+    .key.backspace,
+    .key.tab,
+    .key.caps {
+        width: auto;
+        padding: 0 0.5rem;
+        min-width: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .key {
+        min-width: 1.5rem;
+        height: 2.25rem;
+        font-size: 0.7rem;
+    }
+}

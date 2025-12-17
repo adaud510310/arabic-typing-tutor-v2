@@ -1,0 +1,126 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    outline: none;
+}
+
+.referenceBox {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    direction: rtl;
+    /* Will be overridden by inline style based on lang */
+    color: var(--secondary-foreground);
+    position: relative;
+    user-select: none;
+    box-shadow: var(--shadow-sm);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.inputBox {
+    background-color: var(--background);
+    border: 2px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    direction: rtl;
+    /* Will be overridden */
+    color: var(--foreground);
+    min-height: 100px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    cursor: text;
+}
+
+.wrapper:focus-within .inputBox {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.char {
+    position: relative;
+    transition: color 0.1s;
+}
+
+.correct {
+    color: var(--success);
+}
+
+.incorrect {
+    color: var(--error);
+    background-color: rgba(239, 68, 68, 0.1);
+    border-radius: 2px;
+}
+
+.current {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border-radius: 2px;
+}
+
+.stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-sans);
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.statLabel {
+    font-size: 0.8rem;
+    color: var(--secondary-foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.statValue {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Cursor in the input box */
+.inputCursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background-color: var(--primary);
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.smallFont {
+    font-size: 1.1rem !important;
+
+    .stats {
+        gap: 1rem;
+    }
+
+    .statValue {
+        font-size: 1.25rem;
+    }
+}
