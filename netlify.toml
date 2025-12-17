@@ -7,3 +7,8 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  NEXT_PRIVATE_TARGET = "server"
+
+# Force functions to use Node.js runtime
+[functions]
+  node_bundler = "esbuild"

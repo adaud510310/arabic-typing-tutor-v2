@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Essential for Netlify deployment
+  output: 'standalone',
+
   images: {
     remotePatterns: [
       {
@@ -8,6 +11,7 @@ const nextConfig = {
       },
     ],
   },
+
   async headers() {
     return [
       {
