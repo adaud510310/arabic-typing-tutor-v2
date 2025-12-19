@@ -5,7 +5,7 @@ import { useLanguage } from '@/context/LanguageContext';
 const KEY_MAP_EN_TO_AR = {
     'q': 'ض', 'w': 'ص', 'e': 'ث', 'r': 'ق', 't': 'ف', 'y': 'غ', 'u': 'ع', 'i': 'ه', 'o': 'خ', 'p': 'ح', '[': 'ج', ']': 'د',
     'a': 'ش', 's': 'س', 'd': 'ي', 'f': 'ب', 'g': 'ل', 'h': 'ا', 'j': 'ت', 'k': 'ن', 'l': 'م', ';': 'ك', '\'': 'ط',
-    'z': 'ئ', 'x': 'ء', 'c': 'ؤ', 'v': 'ر', 'b': 'ل', 'n': 'ى', 'm': 'ة', ',': 'و', '.': 'ز', '/': 'ظ', '`': 'ذ'
+    'z': 'ئ', 'x': 'ء', 'c': 'ؤ', 'v': 'ر', 'b': 'لا', 'n': 'ى', 'm': 'ة', ',': 'و', '.': 'ز', '/': 'ظ', '`': 'ذ'
 };
 
 // Mapping from English QWERTY to Arabic (with Shift)
@@ -19,15 +19,15 @@ const KEY_MAP_EN_TO_AR_SHIFT = {
     '6': '^',
     '7': '&',
     '8': '*',
-    '9': ')',
-    '0': '(',
+    '9': '(',
+    '0': ')',
     '-': '_',
     '=': '+',
     'q': 'َ',  // Fatha
-    'w': 'ّ',  // Shadda
+    'w': 'ً',  // Tanween Fath
     'e': 'ُ',  // Damma
-    'r': 'ً',  // Tanween Fath
-    't': 'ٌ',  // Tanween Damm
+    'r': 'ٌ',  // Tanween Damm
+    't': 'ﻹ',  // Lam-Alif-Hamza below
     'y': 'إ',  // Hamza below Alif
     'u': '\u2018',  // Left single quotation
     'i': '÷',  // Division
@@ -35,10 +35,11 @@ const KEY_MAP_EN_TO_AR_SHIFT = {
     'p': '؛',  // Arabic semicolon
     '[': '<',
     ']': '>',
+    '\\': '|',
     'a': 'ِ',  // Kasra
     's': 'ٍ',  // Tanween Kasr
-    'd': '[',
-    'f': ']',
+    'd': ']',
+    'f': '[',
     'g': 'لأ', // Lam-Alif with Hamza above
     'h': 'أ',  // Hamza above Alif
     'j': 'ـ',  // Tatweel
@@ -50,11 +51,11 @@ const KEY_MAP_EN_TO_AR_SHIFT = {
     'x': 'ْ',  // Sukun
     'c': '}',
     'v': '{',
-    'b': 'لإ', // Lam-Alif with Hamza below
+    'b': 'لآ', // Lam-Alif with Maddah
     'n': 'آ',  // Alif with Maddah
     'm': '\u2019',  // Right single quotation
-    ',': ',',
-    '.': '.',  // Period
+    ',': '<',
+    '.': '.',  // Period (النقطة)
     '/': '؟'   // Arabic question mark
 };
 
